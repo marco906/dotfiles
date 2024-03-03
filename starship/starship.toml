@@ -1,0 +1,82 @@
+format = """
+[](fg:color_bg1)\
+[](bg:color_bg1 fg:color_fg1)\
+[](bg:color_bg2 fg:color_bg1)\
+$directory\
+[](fg:color_bg2 bg:color_bg3)\
+$git_branch\
+$git_status\
+[](fg:color_bg3 bg:color_bg4)\
+$git_commit\
+[](fg:color_bg4 bg:color_bg5)\
+$time\
+[ ](fg:color_bg5)\
+\n$character"""
+
+palette = 'marco_dark_purple'
+
+[palettes.marco_dark_blue]
+color_fg1 = '#090c0c'
+color_bg1 = '#a3aed2'
+
+color_fg2 = '#e3e5e5'
+color_bg2 = '#769ff0'
+
+color_fg3 = '#769ff0'
+color_bg3 = '#394260'
+
+color_fg4 = '#769ff0'
+color_bg4 = '#212736'
+
+color_fg5 = '#a0a9cb'
+color_bg5 = '#1d2230'
+
+[palettes.marco_dark_purple]
+color_fg1 = '#090c0c'
+color_bg1 = '#b0a3d2'
+
+color_fg2 = '#ebebed'
+color_bg2 = '#5e56c5'
+
+color_fg3 = '#b8b4ea'
+color_bg3 = '#3c3960'
+
+color_fg4 = '#8880ce'
+color_bg4 = '#2c2943'
+
+color_fg5 = '#a39eec'
+color_bg5 = '#211d30'
+
+[directory]
+style = "fg:color_fg2 bg:color_bg2"
+format = "[ $path]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+
+[git_branch]
+symbol = ""
+style = "bg:color_bg3"
+format = '[[ $symbol $branch](fg:color_fg3 bg:color_bg3)]($style)'
+
+[git_commit]
+tag_symbol = ""
+commit_hash_length = 7
+only_detached = false
+style = "bg:color_bg4"
+format = '[[ $hash$tag](fg:color_fg4 bg:color_bg4)]($style)'
+
+[git_status]
+style = "bg:color_bg3"
+format = '[[( $all_status$ahead_behind)](fg:color_fg3 bg:color_bg3)]($style)'
+
+[time]
+disabled = false
+time_format = "%T"
+style = "bg:color_bg5"
+format = '[[  $time](fg:color_fg5 bg:color_bg5)]($style)'
