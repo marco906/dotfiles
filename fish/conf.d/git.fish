@@ -7,9 +7,10 @@ alias gp="git push"
 alias gf="git fetch"
 
 # commit
-alias gc="git commit -v"
-alias gcm="git commit -m"
-alias gcam="git add -A && git commit -m"
+function gcm
+    git commit -m "$argv"
+end
+alias gcam="gaa -A && gcm"
 alias ga="git add"
 alias gaa="git add --a"
 

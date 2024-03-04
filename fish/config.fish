@@ -3,6 +3,7 @@ if status is-interactive
 end
 set fish_greeting
 set -x STARSHIP_CONFIG ~/.config/starship/starship.toml
+set -x PATH ~/dev/flutter/bin $PATH
 set -x PATH /usr/local/opt/coreutils/libexec/gnubin $PATH
 set -x MANPATH /usr/local/opt/coreutils/libexec/gnuman $MANPATH
 #eval (gdircolors -c ~/.config/bliss-dircolors/bliss.dircolors)
