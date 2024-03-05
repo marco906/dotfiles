@@ -1,6 +1,7 @@
 # general aliases
 alias m="make"
-alias l="gls --color"
-alias ll="gls -a --color"
-alias ld="gls -d --color */"
+alias l="lsd --group-dirs first"
+alias ll="lsd --group-dirs first -a"
+alias ld="lsd -a -d */"
 alias cl="clear"
+alias fpg="flutter pub get"
