@@ -34,3 +34,13 @@ alias gds="git diff --stat"
 
 # reset
 alias gundo="git reset --soft HEAD~1"
+
+# github links
+function glink
+    set repository_url (git ls-remote --get-url)
+    set commit_hash (git rev-parse HEAD)
+    set repository_url (echo $repository_url | sed 's/^git@github.com:/https:\/\/github.com\//')
+    set github_link "$repository_url/commit/$commit_hash"
+    echo -n "$github_link"
+    echo -n "$github_link" | pbcopy
+end
